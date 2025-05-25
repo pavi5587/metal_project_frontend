@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import LoginImg from "../assets/images/loginImg.jpg";
 import Grid from "@mui/material/Grid";
 import { Typography, TextField, Button, Box, Paper } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -42,7 +40,6 @@ const Login = () => {
         <Box className={classes.container}>
             <Grid container spacing={2} className={classes.gridContainer}>
                 <Grid size={4} className={classes.gridContainer}>
-                    {/* <img src={LoginImg} height={"100%"} width={"100%"} /> */}
                 </Grid>
                 <Grid size={4}>
                     <Box className={classes.loginBox}>

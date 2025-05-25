@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import DynamicForm from '../../components/dynamicForm';
 import axios from 'axios';
 import DynamicTable from '../../components/dynamicTable';
-import classes from "./styles.module.css";
 import Header from '../../components/header';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useStyles } from './styles';
 
 
 const metals = process.env.REACT_APP_METALS?.split(',');
 const token = localStorage.getItem("token");
 
 const Purity = () => {
+    const classes = useStyles();
     const [purities, setPurities] = useState([]);
 
     const fields = [
@@ -40,7 +41,7 @@ const Purity = () => {
             setPurities(response?.data?.purityList);
         } catch (error) {
             console.error('Error', error);
-             toast.error(error?.response?.data?.message, { position: "top-right" });
+            toast.error(error?.response?.data?.message, { position: "top-right" });
         }
     };
 
@@ -83,10 +84,13 @@ const Purity = () => {
         <>
             <Header />
             <div className={classes.purityContainer}>
+
                 <DynamicForm fields={fields} initialValues={initialValues} api={"/api/purity/add"} fetchData={fetchPurities} />
-                <DynamicTable tableData={purities} tableTitle={tableTitle} metals={metals}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete} />
+                <div className={classes.tableContainer}>
+                    <DynamicTable tableData={purities} tableTitle={tableTitle} metals={metals}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete} />
+                </div>
             </div>
         </>
 

@@ -7,12 +7,12 @@ import dayjs from 'dayjs';
 import axios from 'axios';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from 'react-router-dom';
+
 
 const token = localStorage.getItem("token");
 
 export default function DynamicForm({ fields, initialValues, api, purityList, fetchData }) {
-    const navigate = useNavigate()
+
     const [formData, setFormData] = useState(initialValues || {});
     const [existingRate, setExistingRate] = useState(null);
 
@@ -66,10 +66,10 @@ export default function DynamicForm({ fields, initialValues, api, purityList, fe
                             metal: formData.metal,
                             purity: formData.purity,
                         },
-                    }, {
+
                         headers: {
                             Authorization: `Bearer ${token}`,
-                        },
+                        }
                     });
                     console.log("response", response);
 
@@ -77,7 +77,7 @@ export default function DynamicForm({ fields, initialValues, api, purityList, fe
                 } catch (err) {
                     console.error('Error fetching latest rate:', err);
                     setExistingRate(null);
-                    toast.error(err?.response?.data?.message, { position: "top-right" });
+
                 }
             } else {
                 setExistingRate(null);

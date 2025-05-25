@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { register } from "../apiServices";
-// import LoginImg from "../assets/images/loginImg.jpg";
 import {
     Typography,
     TextField,
@@ -15,7 +13,6 @@ import {
     Paper,
     Grid
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -39,16 +36,7 @@ const Register = () => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
-    const postRegisterData = async (formData) => {
-        // try {
-        //   const data = await register(formData);
-        //   navigate("/login");
-        //   toast.success("Registered Successfully", { position: "top-right" });
-        // } catch (error) {
-        //   console.error("Failed to fetch tasks:", error);
-        //   toast.error(error?.response?.data?.message, { position: "top-right" });
-        // }
-    };
+
 
     const handleSubmit = async () => {
         console.log("Form Data:", formData);

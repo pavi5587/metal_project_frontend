@@ -4,8 +4,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { styled } from '@mui/material/styles';
+
 
 const StyledTable = styled(Table)(({ theme }) => ({
     width: '100%',
@@ -96,14 +96,12 @@ export default function DynamicTable({ tableData, tableTitle, metals, onEdit, on
                                             </TableCell>
                                         );
                                     }
-                                    else if (value === 'date') {
+                                    else if (value === 'rateDate') {
                                         return (
                                             <TableCell key={value}>
-                                                <DatePicker
-                                                    value={editFormData.rateDate ? new Date(editFormData.rateDate) : null}
-                                                    onChange={handleDateChange}
-                                                    renderInput={(params) => <TextField {...params} fullWidth />}
-                                                />
+                                                {value === 'rateDate' && row.rateDate
+                                                    ? new Date(row.rateDate).toLocaleDateString()
+                                                    : '-'}
                                             </TableCell>
                                         );
                                     }
@@ -121,7 +119,7 @@ export default function DynamicTable({ tableData, tableTitle, metals, onEdit, on
                                 }
                                 return (
                                     <TableCell key={value}>
-                                        {value === 'date' && row.rateDate
+                                        {value === 'rateDate' && row.rateDate
                                             ? new Date(row.rateDate).toLocaleDateString()
                                             : row[value] !== undefined ? row[value] : '-'}
                                     </TableCell>
