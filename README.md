@@ -4,6 +4,7 @@ This is the frontend of the ATTS Technologies Metal Management Task built with R
 
 ## 🧩 Features
 
+- User Register and login user
 - Static Metal Dropdown (Gold, Silver, Platinum)
 - CRUD for Purity Records (linked to a Metal)
 - Metal Rate Entry with history tracking
@@ -13,6 +14,5 @@ This is the frontend of the ATTS Technologies Metal Management Task built with R
 ## 🚀 Setup Instructions
 
 ```bash
-cd frontend
 npm install
 npm start
