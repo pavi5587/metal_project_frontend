@@ -16,13 +16,13 @@ export const useStyles = makeStyles({
         alignItems: "center",
     },
     registerContainer: {
-        width: 550,
+        width: 500,
         padding: "20px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 2,
-        marginTop: "8%",
+        gap: 1,
+        marginTop: "5%",
         borderRadius: "10px !important",
     },
     registerTitle: {
@@ -30,10 +30,10 @@ export const useStyles = makeStyles({
         fontWeight: "bold !important",
     },
     registerButton: {
-        marginTop: "25px !important",
+        marginTop: "10px !important",
         background: "#1976d2 !important",
         height: "50px !important",
-        width: "100% !important",
+        width: "97% !important",
     },
     registerButtonContainer: {
         width: "100% !important",
@@ -42,11 +42,14 @@ export const useStyles = makeStyles({
         alignItems: "center !important",
     },
     textField: {
+        marginTop: "10px !important",
+    },
+    textField1: {
         marginTop: "20px !important",
     },
     Radio: {
         textAlign: "left",
         width: "100%",
-        marginTop: "15px !important",
+        marginTop: "10px !important",
     },
 });

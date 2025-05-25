@@ -70,10 +70,8 @@ const Register = () => {
                                         fullWidth
                                         required
                                         onChange={handleChange}
-                                        className={classes.textField}
-                                        sx={{
-                                            width: "100%"
-                                        }}
+                                        className={classes.textField1}
+
                                     />
                                 </Grid>
                                 <Grid size xs={6}>
@@ -85,7 +83,7 @@ const Register = () => {
                                         fullWidth
                                         required
                                         onChange={handleChange}
-                                        className={classes.textField}
+                                        className={classes.textField1}
                                     />
                                 </Grid>
                                 <Grid size xs={6}>
