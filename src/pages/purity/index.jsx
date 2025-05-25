@@ -40,6 +40,7 @@ const Purity = () => {
             setPurities(response?.data?.purityList);
         } catch (error) {
             console.error('Error', error);
+             toast.error(error?.response?.data?.message, { position: "top-right" });
         }
     };
 

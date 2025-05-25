@@ -7,51 +7,8 @@ import { makeStyles } from "@mui/styles";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useStyles } from './styles';
 
-const useStyles = makeStyles({
-    container: {
-        flexGrow: 1,
-        background: "",
-        width: "100%",
-        height: "100vh",
-    },
-    gridContainer: {
-        height: "99vh",
-    },
-    loginBox: {
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    loginContainer: {
-        width: 500,
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: 2,
-        marginTop: "30%",
-        borderRadius: "10px !important",
-    },
-    loginTitle: {
-        fontSize: "25px !important",
-        fontWeight: "bold !important",
-    },
-    loginButton: {
-        marginTop: "25px !important",
-        background: "#1f2f68 !important",
-        height: "50px !important",
-    },
-    signupStyle: {
-        color: "#1976d2",
-        cursor: "pointer",
-        fontWeight: "bold",
-    },
-    textField: {
-        marginTop: "20px !important",
-    },
-});
 
 const Login = () => {
     const classes = useStyles();

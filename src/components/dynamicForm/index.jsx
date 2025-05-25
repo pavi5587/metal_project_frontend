@@ -77,6 +77,7 @@ export default function DynamicForm({ fields, initialValues, api, purityList, fe
                 } catch (err) {
                     console.error('Error fetching latest rate:', err);
                     setExistingRate(null);
+                    toast.error(err?.response?.data?.message, { position: "top-right" });
                 }
             } else {
                 setExistingRate(null);

@@ -7,12 +7,14 @@ import Header from '../../components/header';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useStyles } from './styles';
+import { useNavigate } from 'react-router-dom';
 
 const metals = process.env.REACT_APP_METALS?.split(',');
 const token = localStorage.getItem("token");
 
 const MetalRate = () => {
     const classes = useStyles();
+    const navigate = useNavigate()
     const [purityList, setPurityList] = useState([]);
     const [metal, setMetal] = useState('');
     const [purity, setPurity] = useState('');
@@ -34,9 +36,10 @@ const MetalRate = () => {
             console.log("res", res);
 
             setRates(res.data.data);
-            setTotal(res.data.total);
+            setTotal(res.data.totalPages);
         } catch (error) {
             console.error('Error', error);
+            toast.error(error?.response?.data?.message, { position: "top-right" });
         }
     };
 
@@ -83,6 +86,7 @@ const MetalRate = () => {
             setPurities(goldPurities)
         } catch (error) {
             console.error('Error', error);
+            toast.error(error?.response?.data?.message, { position: "top-right" });
         }
     };
 
